@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+header {
+  width: 100%;
+  background-color: #153633;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+/*header-section is a div that contains logo, title and navigation bar*/
+.header-section {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  margin-left: 10px;
+}
+.logo-box {
+  height: 80px;
+  width: 10%;
+  background-color: #bec3c0;
+  border-radius: 50%;
+}
+.logo-img {
+  height: 100%;
+  width: 100%;
+}
+.title-box {
+  height: 60px;
+  width: 50%;
+  margin-left: 20px;
+}
+.title-box h1 {
+  font-size: 2em;
+  color: #bec3c0;
+}
+nav {
+  width: 40%;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 50px;
+}
+nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #bec3c0;
+}
+nav a:hover {
+  color: #85c9ab;
+  font-weight: bold;
+}
+
+main {
+  height: 2000px;
+  width: 100%;
+  background-color: #bec3c0;
+}
+.img-section {
+  height: 500px;
+  width: 100%;
+}
+/*div that contains intro-title and content*/
+.intro {
+  height: 350px;
+  width: 70%;
+  padding: 70px 220px;
+  color: #153633;
+}
+.intro h2 {
+  text-align: center;
+  font-size: 3em;
+}
+.intro p {
+  font-size: 1.5em;
+}
+/*div used to make 6 similar content containers or cards*/
+.card {
+  float: left;
+  width: 29%;
+  margin: 20px 30px;
+  color: #bec3c0;
+  padding: 10rem 0 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  overflow: hidden; /*hiding the content overflow from card's bottom*/
+  transition: transform 500ms ease; /*to ease the speed of size increase*/
+}
+
+/*on hover a card increases its size*/
+.card:hover {
+  transform: scale(1.1);
+}
+/*each card has a different image*/
+.card1 {
+  background-image: url(/images/opera.jpg);
+}
+.card2 {
+  background-image: url(/images/activities.webp);
+}
+.card3 {
+  background-image: url(/images/ferry.webp);
+}
+.card4 {
+  background-image: url(/images/family.webp);
+}
+.card5 {
+  background-image: url(/Images/scenic-route.jpg);
+}
+.card6 {
+  background-image: url(/images/museum.jpg);
+}
+/*pop-up gradient effect inside card*/
+.card-content {
+  padding: 1.5em;
+  background: linear-gradient(
+    hsl(0 0% 0% /0),
+    hsl(0 0% 0% /0.3) 20%,
+    hsl(0 0% 0% /0.8)
+  );
+  transform: translateY(55%); /*hiding the content*/
+  transition: transform 900ms ease; /*ease the speed of transformation of content*/
+}
+.card:hover .card-content {
+  transform: translateY(0); /*viewing the hidden content*/
+}
+/*for line under the card title*/
+.card-title {
+  position: relative;
+  width: max-content;
+}
+.card-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: #85c9ab; /* green line under the card title*/
+  transform: scaleX(0); /*hiding that green line*/
+  transform-origin: left; /*line starts showing from the left*/
+  transition: transform 500ms ease;
+}
+.card:hover .card-title::after {
+  transform: scaleX(1); /*showing that line on hover*/
+}
+button {
+  text-transform: capitalize;
+  color: #85c9ab;
+  background: transparent;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: #85c9ab;
+  color: #153633;
+}
+footer {
+  background-color: #153633;
+  width: 100%;
+}
+/*container inside footer to hold all the divs (column) together*/
+
+.footer-row {
+  display: flex;
+  max-width: 80%;
+  padding: 60px;
+  margin: auto;
+}
+.footer-col {
+  width: 20%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 0.9em;
+  color: #bec3c0;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  position: relative;
+  width: max-content;
+  line-height: 1.5px;
+}
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #85c9ab;
+  height: 3px;
+  width: 100%;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer ul li {
+  margin-bottom: 10px;
+}
+footer ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 0.8em;
+  color: white;
+  display: block;
+  transition: all 300ms ease;
+}
+footer ul li a:hover {
+  color: #85c9ab;
+  padding-left: 5px;
+}
+.footer-col .social-links a i {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: #85c9ab;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 500ms ease;
+}
+.footer-col .social-links a :hover {
+  color: #153633;
+  background-color: #bec3c0;
+}
